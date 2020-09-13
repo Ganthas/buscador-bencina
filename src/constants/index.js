@@ -12,7 +12,7 @@
 // export const trackLyricsGet = commontrack_id => `${cors_anywhere}${base_url}${track_lyrics_get}${commontrack_id}${api_key}`;
 // export const trackGet = commontrack_id => `${cors_anywhere}${base_url}${track_get}${commontrack_id}${api_key}`;
 
-const cors_anywhere = 'https://cors-anywhere.herokuapp.com/';
+const cors_anywhere = '';//https://cors-anywhere.herokuapp.com/
 const base_url = 'https://api.cne.cl/v3/';
 const api_key = '?token=A4IlGIQXV1';
 const regiones = 'regiones';
@@ -24,5 +24,5 @@ const distribuidor_key = '&distribuidor=';
 
 export const regionsGetAll = () => `${cors_anywhere}${base_url}${regiones}${api_key}`;
 export const communeGet = region_nro => `${cors_anywhere}${base_url}${comunas}${api_key}${regiones_key}${region_nro}`;
-export const estationGet = commune_nro => `${cors_anywhere}${base_url}${estaciones}${api_key}${comunas_key}${commune_nro}`;
+export const gasStationsGet = commune_nro => `${cors_anywhere}${base_url}${estaciones}${api_key}${comunas_key}${commune_nro}`;
 

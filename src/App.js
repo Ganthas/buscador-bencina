@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import RegionsContextProvider from './contexts/RegionsContext';
 import CommunesContextProvider from './contexts/CommunesContext';
+import GasStationsContextProvider from './contexts/GasStationsContext';
 import Header from './components/Common/Header';
 import Search from './components/Common/Search';
 import NotFound from './components/NotFound';
@@ -10,19 +11,19 @@ import './assets/css/styles.css';
 const App = () => (
   <BrowserRouter>
     <Header />
-    <RegionsContextProvider>
-      <CommunesContextProvider>
-        <Search />
-      </CommunesContextProvider>
-    </RegionsContextProvider>
-    {/* <Switch>
+
+    <Switch>
       <Route exact path='/'>
-        <SongsContextProvider>
-          <Songs />
-        </SongsContextProvider>
+        <RegionsContextProvider>
+          <CommunesContextProvider>
+            <GasStationsContextProvider>
+              <Search />
+            </GasStationsContextProvider>
+          </CommunesContextProvider>
+        </RegionsContextProvider>
       </Route>
       <Route component={NotFound} />
-    </Switch> */}
+    </Switch>
   </BrowserRouter>
 );
 
