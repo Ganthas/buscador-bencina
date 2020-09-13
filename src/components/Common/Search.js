@@ -17,7 +17,7 @@ const cssH2 = {
 const Search = () => {
     const { doneFetchRegions, regions } = useContext(RegionsContext);
     const { doneGetDomune, commune, getComune } = useContext(CommunesContext);
-    const { validateComune } = useContext(GasStationsContext);
+    const { doneGetGasStations, gasStations, validateComune } = useContext(GasStationsContext);
 
     function handleChange(e) {
         getComune(e.target.value)
@@ -31,33 +31,40 @@ const Search = () => {
             >
                 <Paper className="paper defaultPaper" elevation={3}>
                     <h2 style={cssH2}>Ingresa datos para tu búsqueda</h2>
-                    <form noValidate autoComplete="off">
-                        {
-                            doneFetchRegions ?
-                                (<TextField select label="Region" onChange={handleChange}>
-                                    {regions.map((option) => (
-                                        <MenuItem key={option.cod_region} value={option.cod_region}>
-                                            {option.cod_region} - {option.nom_region}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>)
-                                :
-                                <ProgressBar />
-                        }
-                        {
-                            <TextField select label="Commune" disabled={!doneGetDomune} id='id_comuna'>
-                                {commune.map((option) => (
-                                    <MenuItem key={option.cod_comuna} value={option.cod_comuna}>
-                                        {option.nom_comuna}
+                    {
+                        doneFetchRegions ?
+                            (<TextField select label="Region" onChange={handleChange}>
+                                {regions.map((option) => (
+                                    <MenuItem key={option.cod_region} value={option.cod_region}>
+                                        {option.cod_region} - {option.nom_region}
                                     </MenuItem>
                                 ))}
-                            </TextField>
-                        }
-                        <IconButton onClick={e => validateComune(e)}>
-                            <SearchIcon />
-                        </IconButton>
-                    </form>
+                            </TextField>)
+                            :
+                            <ProgressBar />
+                    }
+                    {
+                        <TextField select label="Comuna" disabled={!doneGetDomune} id="id_comuna">
+                            {commune.map((option) => (
+                                <MenuItem key={option.cod_comuna} value={option.cod_comuna}>
+                                    {option.nom_comuna}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    }
+                    <IconButton onClick={e => validateComune(e)}>
+                        <SearchIcon />
+                    </IconButton>
                 </Paper>
+            </Grid>
+
+            <Grid
+                item
+                xs={9}
+            >
+                {gasStations.map((option) => (
+                    <li>{option.distribuidor.nombre} | <img src={option.distribuidor.logo} width='100'></img> </li>
+                ))}
             </Grid>
         </Grid >
     )

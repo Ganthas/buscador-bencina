@@ -19,7 +19,7 @@ const GasStationsContextProvider = ({ children }) => {
             .catch(err => console.log(err));
     };
 
-    const validateComune = (e, commune_nro = document.querySelector('#id_comuna').value.toLowerCase().trim()) => {
+    const validateComune = (e, commune_nro = document.getElementsByClassName('MuiSelect-nativeInput')[1].value.toLowerCase().trim()) => {
         if (e.type === 'keypress' && e.key !== 'Enter') return;
         if (commune_nro && commune_nro !== "") {
             getGasStations(commune_nro);
