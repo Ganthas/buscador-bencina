@@ -16,7 +16,7 @@ const RegionsContextProvider = ({ children }) => {
             .then(res => {
                 const { data } = res;
                 setDoneFetchRegions(true);
-                !Array.isArray(data) && setRegions(data);
+                !regions.length && setRegions(data);
             })
             .catch(err => console.log(err));
     };

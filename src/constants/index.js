@@ -15,6 +15,14 @@
 const cors_anywhere = 'https://cors-anywhere.herokuapp.com/';
 const base_url = 'https://api.cne.cl/v3/';
 const api_key = '?token=A4IlGIQXV1';
-const regiones_get = 'regiones';
+const regiones = 'regiones';
+const comunas = 'comunas';
+const regiones_key = '&region=';
+const comunas_key = '&comuna=';
+const estaciones = 'combustibles/vehicular/estaciones';
+const distribuidor_key = '&distribuidor=';
 
-export const regionsGetAll = () => `${cors_anywhere}${base_url}${regiones_get}${api_key}`;
+export const regionsGetAll = () => `${cors_anywhere}${base_url}${regiones}${api_key}`;
+export const communeGet = region_nro => `${cors_anywhere}${base_url}${comunas}${api_key}${regiones_key}${region_nro}`;
+export const estationGet = commune_nro => `${cors_anywhere}${base_url}${estaciones}${api_key}${comunas_key}${commune_nro}`;
+
