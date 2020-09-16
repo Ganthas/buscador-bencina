@@ -2,22 +2,14 @@ import React, { Fragment, useContext } from 'react';
 import { GasStationsContext } from './../../contexts/GasStationsContext';
 import ProgressBar from './../Common/ProgressBar';
 import Message from './../Common/Message';
-import Details from './Details';
+import GasStation from './GasStation';
 
-const GasStations = () => {
-    const { doneGetGasStations, gasStations, validateComune } = useContext(GasStationsContext);
+const GasStations = ({ gasStations }) => {
     return (
-        <Fragment>
-            {
-                doneGetGasStations ?
-                    (!Array.isArray(gasStations) && !Array.isArray(gasStations) ?
-                        <Details gasStations={gasStations} />
-                        :
-                        <Message text="No Results" />)
-                    :
-                    <ProgressBar />
-            }
-        </Fragment>
+        gasStations.map((option) => (
+            <GasStation data={option} />
+        ))
+
     );
 };
 
