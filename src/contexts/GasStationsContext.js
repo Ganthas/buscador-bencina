@@ -5,15 +5,18 @@ export const GasStationsContext = createContext();
 
 const GasStationsContextProvider = ({ children }) => {
 
-    const [doneGetGasStations, setDoneGetDomune] = useState(false);
+    const [doneGetGasStations, setDoneGetDomune] = useState(true);
     const [gasStations, setGasStations] = useState([]);
+    const [text, setText] = useState('');
 
     const getGasStations = commune_nro => {
+        setDoneGetDomune(false);
         fetch(gasStationsGet(commune_nro))
             .then(res => res.json())
             .then(res => {
                 const { data } = res;
                 setDoneGetDomune(true);
+                setText(data.length ? 'Results' : 'No Results');
                 setGasStations(data);
             })
             .catch(err => console.log(err));
@@ -27,7 +30,7 @@ const GasStationsContextProvider = ({ children }) => {
     }
 
     return (
-        <GasStationsContext.Provider value={{ doneGetGasStations, gasStations, validateComune }}>
+        <GasStationsContext.Provider value={{ doneGetGasStations, gasStations, validateComune, text }}>
             {children}
         </GasStationsContext.Provider>
     );

@@ -74,6 +74,6 @@ a {
 	}
 }
 
-.header{
+.header,.footer{
     background-image: url('../img/img_background.jpg');
 }

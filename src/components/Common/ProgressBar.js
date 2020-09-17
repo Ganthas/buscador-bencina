@@ -1,11 +1,28 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const ProgressBar = () => (
-    <div className="progressBar">
-        <CircularProgress size={30} />
-    </div>
-);
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        '& > * + *': {
+            marginTop: theme.spacing(2),
+        },
+        color: '#043F6C'
+    },
+}));
+
+const ProgressBar = () => {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <LinearProgress color="primary" />
+        </div>
+    );
+};
 
 ProgressBar.displayName = 'ProgressBar';
 

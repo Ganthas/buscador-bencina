@@ -4,6 +4,7 @@ import RegionsContextProvider from './contexts/RegionsContext';
 import CommunesContextProvider from './contexts/CommunesContext';
 import GasStationsContextProvider from './contexts/GasStationsContext';
 import Header from './components/Common/Header';
+import Footer from './components/Common/Footer';
 import Search from './components/Common/Search';
 import NotFound from './components/NotFound';
 import './assets/css/styles.css';
@@ -24,6 +25,7 @@ const App = () => (
       </Route>
       <Route component={NotFound} />
     </Switch>
+    <Footer />
   </BrowserRouter>
 );
 

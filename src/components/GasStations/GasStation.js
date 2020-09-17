@@ -11,7 +11,7 @@ const Details = ({ data }) => {
     return (
         <Grid item xs={3} sm={3}>
             <Paper className="defaultPaper" elevation={3} style={style}>
-                <img src={distribuidor.logo} width='100'></img>
+                <img src={distribuidor.logo} height='30'></img>
                 <h3>{distribuidor.nombre}</h3>
                 {/* <ul>
                 <li>

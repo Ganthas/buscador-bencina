@@ -12,7 +12,7 @@
 // export const trackLyricsGet = commontrack_id => `${cors_anywhere}${base_url}${track_lyrics_get}${commontrack_id}${api_key}`;
 // export const trackGet = commontrack_id => `${cors_anywhere}${base_url}${track_get}${commontrack_id}${api_key}`;
 
-const cors_anywhere = '';//https://cors-anywhere.herokuapp.com/
+const cors_anywhere = 'https://cors-anywhere.herokuapp.com/';//
 const base_url = 'https://api.cne.cl/v3/';
 const api_key = '?token=A4IlGIQXV1';
 const regiones = 'regiones';

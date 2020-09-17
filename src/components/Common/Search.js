@@ -11,13 +11,14 @@ import ProgressBar from './../Common/ProgressBar';
 const container = {
     marginTop: '50px',
     marginRight: '50px',
-    marginLeft: '70px'
+    marginLeft: '70px',
+    marginBottom: '100px'
 }
 
 const Search = () => {
     const { doneFetchRegions, regions } = useContext(RegionsContext);
     const { doneGetDomune, commune, getComune } = useContext(CommunesContext);
-    const { doneGetGasStations, gasStations, validateComune } = useContext(GasStationsContext);
+    const { doneGetGasStations, gasStations, validateComune, text } = useContext(GasStationsContext);
 
     function handleChange(e) {
         getComune(e.target.value)
@@ -37,9 +38,9 @@ const Search = () => {
                     <Grid container spacing={3}>
                         {
                             doneGetGasStations ?
-                                (gasStations.length ? <GasStations gasStations={gasStations} /> : <Message text="resultados" />)
+                                (gasStations.length ? <GasStations gasStations={gasStations} /> : <Message text={text} />)
                                 :
-                                (doneGetGasStations ? <ProgressBar /> : <div>holi</div>)
+                                <ProgressBar />
                         }
                     </Grid>
                 </Grid>
