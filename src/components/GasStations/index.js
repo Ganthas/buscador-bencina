@@ -7,7 +7,7 @@ import GasStation from './GasStation';
 const GasStations = ({ gasStations }) => {
     return (
         gasStations.map((option) => (
-            <GasStation data={option} />
+            <GasStation key={option.id} data={option} />
         ))
 
     );

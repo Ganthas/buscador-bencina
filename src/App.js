@@ -23,6 +23,9 @@ const App = () => (
           </CommunesContextProvider>
         </RegionsContextProvider>
       </Route>
+      <Route path='/gasstation/:gasstation_id'>
+        <div>Holiwi</div>
+      </Route>
       <Route component={NotFound} />
     </Switch>
     <Footer />

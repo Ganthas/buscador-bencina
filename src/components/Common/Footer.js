@@ -1,21 +1,40 @@
 import React from 'react';
 import { Toolbar } from '@material-ui/core';
+import EmailIcon from '@material-ui/icons/Email';
+import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+
 const css = {
     position: "fixed",
     bottom: 0,
     textAlign: "center",
-    paddingBottom: 10,
     borderRadius: '80px 80px  0 0',
     width: '100%',
     color: 'white',
-    align: "center"
+    align: "center",
+    height: '100px',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center'
 }
+
 
 const Footer = () => (
     <footer style={css} className='footer'>
-        <Toolbar>
-            <span><small><i>by Josías Sanhueza Gatica</i></small></span>
-        </Toolbar>
+        <label>
+            <small>
+                <i>
+                    2020 - Josías Sanhueza Gatica
+                </i>
+            </small>
+        </label>
+        <label>
+            <small>
+                <i>
+                    <SentimentVerySatisfiedIcon style={{ fontSize: 20 }} />
+                </i>
+            </small>
+        </label>
     </footer>
 );
 

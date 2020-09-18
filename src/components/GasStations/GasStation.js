@@ -1,30 +1,63 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import RoomIcon from '@material-ui/icons/Room';
+import ButtonPrimary from './../Common/ButtonPrimary';
 
 const style = {
-    height: '200px'
+    height: '220px'
+}
+
+const imgStyle = {
+    width: '80%'
+}
+
+const cssButtonPrimary = {
+    float: 'left'
 }
 
 const Details = ({ data }) => {
-    const { distribuidor } = data;
+    const { id, distribuidor, precios, direccion_calle, direccion_numero } = data;
     return (
         <Grid item xs={3} sm={3}>
             <Paper className="defaultPaper" elevation={3} style={style}>
-                <img src={distribuidor.logo} height='30'></img>
-                <h3>{distribuidor.nombre}</h3>
-                {/* <ul>
-                <li>
-                    <img alt="track" src={track} />
-                    <strong>Track: </strong>
-                    <span>{track_name}</span>
-                </li>
-                <li>
-                    <img alt="album" src={album} />
-                    <strong>Album: </strong>
-                    <span>{album_name}</span>
-                </li>
-            </ul> */}
+                <img src={distribuidor.logo_horizontal_svg} style={imgStyle}></img>
+                <br></br>
+                <small>
+                    <RoomIcon style={{ fontSize: 20 }} />
+                    {direccion_calle} #{direccion_numero}
+                </small>
+                <ul className='liul'>
+                    <li>
+                        <small>
+                            <span>
+                                <strong>Gasolina 93</strong>: ${precios['gasolina 93']}
+                            </span>
+                        </small>
+                    </li>
+                    <li>
+                        <small>
+                            <span>
+                                <strong>Gasolina 95</strong>: ${precios['gasolina 95']}
+                            </span>
+                        </small>
+                    </li>
+                    <li>
+                        <small>
+                            <span>
+                                <strong>Gasolina 97</strong>: ${precios['gasolina 97']}
+                            </span>
+                        </small>
+                    </li>
+                    <li>
+                        <small>
+                            <span>
+                                <strong>Petróleo diesel</strong>: ${precios['petroleo diesel']}
+                            </span>
+                        </small>
+                    </li>
+                </ul>
+                <ButtonPrimary type="gasstations" to={`/gasstation/${id}`} style={cssButtonPrimary} />
             </Paper>
         </Grid>
     )
