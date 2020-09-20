@@ -6,13 +6,14 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const color = {
     backgroundColor: '#043F6C',
-    color: 'white'
+    color: 'white',
+    fontSize: '.75rem',
 }
 
 const ButtonPrimary = ({ type, to }) => (
     <Link className="buttonPrimary" to={to}>
         <Button size="small" variant="contained" style={color}>
-            {type === 'gasstations' ? <AddIcon style={{ fontSize: 20 }} /> : <ArrowBackIosIcon style={{ fontSize: 20 }} />}
+            {type === 'gasstations' ? <AddIcon style={{ fontSize: 15 }} /> : <ArrowBackIosIcon style={{ fontSize: 15 }} />}
             {type === 'gasstations' ? 'Ver más' : 'Go Back'}
         </Button>
     </Link>
