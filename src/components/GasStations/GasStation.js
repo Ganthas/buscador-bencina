@@ -72,6 +72,7 @@ const Details = ({ data }) => {
             <Paper className="defaultPaper" elevation={3} style={style}>
                 <Grid container justify="center" spacing={3} style={cssTitle}>
                     <Grid item style={cssItemImg}>
+                        test
                         <img src={distribuidor.logo_horizontal_svg} style={imgStyle}></img>
                     </Grid>
                     <Grid item style={cssDireccion}>
