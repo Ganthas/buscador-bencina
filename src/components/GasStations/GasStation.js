@@ -70,7 +70,7 @@ const Details = ({ data }) => {
     return (
         <Grid item xs={12} md={3}>
             <Paper className="defaultPaper" elevation={3} style={style}>
-                <Grid container spacing={3} style={cssTitle}>
+                <Grid container justify="center" spacing={3} style={cssTitle}>
                     <Grid item style={cssItemImg}>
                         <img src={distribuidor.logo_horizontal_svg} style={imgStyle}></img>
                     </Grid>
