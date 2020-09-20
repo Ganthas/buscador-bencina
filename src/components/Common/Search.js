@@ -11,7 +11,7 @@ import ProgressBar from './../Common/ProgressBar';
 const container = {
     marginTop: '50px',
     marginRight: '50px',
-    marginLeft: '70px',
+    marginLeft: '50px',
     marginBottom: '100px'
 }
 
@@ -27,14 +27,10 @@ const Search = () => {
     return (
         <div style={container}>
             <Grid container spacing={6}>
-                <Grid item xs={3}>
-                    <Grid container spacing={6}>
-                        <Grid>
-                            <SearchGasStations doneFetchRegions={doneFetchRegions} regions={regions} handleChange={handleChange} commune={commune} doneGetDomune={doneGetDomune} validateComune={validateComune} />
-                        </Grid>
-                    </Grid >
+                <Grid item xs={12} md={3}>
+                    <SearchGasStations doneFetchRegions={doneFetchRegions} regions={regions} handleChange={handleChange} commune={commune} doneGetDomune={doneGetDomune} validateComune={validateComune} />
                 </Grid >
-                <Grid item xs={9}>
+                <Grid item xs={12} md={9}>
                     <Grid container spacing={3}>
                         {
                             doneGetGasStations ?

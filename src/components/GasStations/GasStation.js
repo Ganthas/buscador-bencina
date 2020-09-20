@@ -10,7 +10,8 @@ const style = {
 }
 
 const imgStyle = {
-    width: '80%'
+    width: '80%',
+    maxWidth: '180px'
 }
 
 const cssButtonPrimary = {
@@ -67,13 +68,13 @@ const cssItemImg = {
 const Details = ({ data }) => {
     const { id, distribuidor, precios, direccion_calle, direccion_numero } = data;
     return (
-        <Grid item xs={3} sm={3}>
+        <Grid item xs={12} md={3}>
             <Paper className="defaultPaper" elevation={3} style={style}>
                 <Grid container spacing={3} style={cssTitle}>
-                    <Grid item xs={12} sm={12} style={cssItemImg}>
+                    <Grid item style={cssItemImg}>
                         <img src={distribuidor.logo_horizontal_svg} style={imgStyle}></img>
                     </Grid>
-                    <Grid item xs={12} sm={12} style={cssDireccion}>
+                    <Grid item style={cssDireccion}>
                         <span style={cssSpan}>
                             <RoomIcon style={{ fontSize: 10 }} />
                             {direccion_calle} #{direccion_numero}

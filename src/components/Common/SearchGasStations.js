@@ -15,9 +15,13 @@ const iconoBuscar = {
     marginTop: '20px'
 }
 
+const cssPaper = {
+    marginTop: '0px'
+}
+
 const SearchGasStations = ({ doneFetchRegions, regions, handleChange, commune, doneGetDomune, validateComune }) => {
     return (
-        <Paper className="paper defaultPaper" elevation={3}>
+        <Paper className="paper defaultPaper" elevation={3} xs={12} style={cssPaper}>
             <h2 style={azulPorDefecto}>Ingresa datos para tu búsqueda</h2>
             {
                 doneFetchRegions ?
