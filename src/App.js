@@ -8,6 +8,7 @@ import Footer from './components/Common/Footer';
 import Search from './components/Common/Search';
 import NotFound from './components/NotFound';
 import './assets/css/styles.css';
+import ButtonPrimary from './components/Common/ButtonPrimary';
 
 const App = () => (
   <BrowserRouter>
@@ -24,7 +25,7 @@ const App = () => (
         </RegionsContextProvider>
       </Route>
       <Route path='/gasstation/:gasstation_id'>
-        <div>Holiwi</div>
+        <ButtonPrimary to={`/`} />
       </Route>
       <Route component={NotFound} />
     </Switch>
