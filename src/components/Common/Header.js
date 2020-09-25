@@ -19,13 +19,13 @@ const cssCNE = {
 const Header = () => (
     <AppBar position="sticky" style={cssAppBar} className='header'>
         <Toolbar >
-            <LocalGasStationTwoToneIcon style={{ fontSize: 60 }} />
+            <LocalGasStationTwoToneIcon style={{ fontSize: 60 }} className='iconoGasStation' />
             &nbsp; &nbsp;
             <h1>Gas Stations Finder App</h1>
-            <img src={logoChile} alt="logo chile" width="30" height="30" style={cssLogo}></img>
+            <img src={logoChile} alt="logo chile" width="30" className='iconoChile' style={cssLogo}></img>
         </Toolbar>
-        <Toolbar >
-            <span><small><i>Buscador de gasolineras, datos extraidos de la <a href="https://api.cne.cl/apidocs/#api-_" target='_blank' style={cssCNE}>Comisión nacional de energía</a></i></small></span>
+        <Toolbar>
+            <span className='textoHeader'><small><i>Buscador de gasolineras, datos extraidos de la <a href="https://api.cne.cl/apidocs/#api-_" target='_blank' style={cssCNE}>Comisión nacional de energía</a></i></small></span>
         </Toolbar>
     </AppBar >
 );

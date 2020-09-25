@@ -28,7 +28,7 @@ const Footer = () => (
                 </i>
             </small>
         </label>
-        <label>
+        <label className='textoFooter'>
             <small>
                 <i>
                     <SentimentVerySatisfiedIcon style={{ fontSize: 20 }} />
