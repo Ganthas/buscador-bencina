@@ -85,3 +85,28 @@ a {
 .liul li {
 	margin-top: 1px !important;
 }
+
+@media (max-width: 400px) {
+	.textoHeader{
+		display: none;
+	}
+	.textoFooter {
+		display: none;
+	}
+	footer{
+		height: 40px !important;
+	}
+	header{
+		height: 40px !important;
+	}
+	header h1{
+		height: 40px !important;
+		font-size: smaller;
+	}
+	.iconoGasStation{
+		font-size: 20px !important;
+	}
+	.iconoChile{
+		width: 15px !important;
+	}
+}
