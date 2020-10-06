@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import RegionsContextProvider from './contexts/RegionsContext';
 import CommunesContextProvider from './contexts/CommunesContext';
 import GasStationsContextProvider from './contexts/GasStationsContext';
+import GasStationDetailContextProvider from './contexts/GasStationDetailContext';
 import Header from './components/Common/Header';
 import Footer from './components/Common/Footer';
 import Search from './components/Common/Search';
+import GasStationDetail from './components/GasStations/Details';
 import NotFound from './components/NotFound';
 import './assets/css/styles.css';
 import ButtonPrimary from './components/Common/ButtonPrimary';
+
 
 const App = () => (
   <BrowserRouter>
@@ -25,7 +28,9 @@ const App = () => (
         </RegionsContextProvider>
       </Route>
       <Route path='/gasstation/:gasstation_id'>
-        <ButtonPrimary to={`/`} />
+        <GasStationDetailContextProvider>
+          <GasStationDetail />
+        </GasStationDetailContextProvider>
       </Route>
       <Route component={NotFound} />
     </Switch>

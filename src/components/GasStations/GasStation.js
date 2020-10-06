@@ -65,8 +65,9 @@ const cssItemImg = {
     padding: '12px 12px 1px 12px'
 }
 
-const Details = ({ data }) => {
+const GasStation = ({ data }) => {
     const { id, distribuidor, precios, direccion_calle, direccion_numero } = data;
+    const commune_id = document.getElementsByClassName('MuiSelect-nativeInput')[1].value.toLowerCase().trim();
     return (
         <Grid item xs={12} md={3}>
             <Paper className="defaultPaper" elevation={3} style={style}>
@@ -104,12 +105,14 @@ const Details = ({ data }) => {
                     </Grid>
                 </Grid>
 
-                <ButtonPrimary type="gasstations" to={`/gasstation/${id}`} style={cssButtonPrimary} />
+                <ButtonPrimary type="gasstations" to={`/gasstation/${id}/${commune_id}`} style={cssButtonPrimary}>
+                    holiwi
+                </ButtonPrimary>
             </Paper>
         </Grid >
     )
 }
 
-Details.displayName = 'Details';
+GasStation.displayName = 'GasStation';
 
-export default Details;
+export default GasStation;
