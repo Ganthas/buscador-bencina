@@ -7,7 +7,7 @@ import GasStationDetailContextProvider from './contexts/GasStationDetailContext'
 import Header from './components/Common/Header';
 import Footer from './components/Common/Footer';
 import Search from './components/Common/Search';
-import GasStationDetail from './components/GasStations/Details';
+import GasStationDetail from './components/GasStations/GasStationDetail';
 import NotFound from './components/NotFound';
 import './assets/css/styles.css';
 import ButtonPrimary from './components/Common/ButtonPrimary';
