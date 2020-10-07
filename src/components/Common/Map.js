@@ -24,7 +24,7 @@ export default class Map extends Component {
         const allScripts = document.getElementsByTagName('script');
         [].filter.call(
             allScripts,
-            (scpt) => scpt.src.indexOf('key=AIzaSyDE2XTOO3mc5CnZSdfeesVG0xVfs8L9DidM__0') >= 0
+            (scpt) => scpt.src.indexOf('key=AIzaSyDWuvpCyslaCiwEMJvzF_DsLefQXNjjPuE') >= 0
         )[0].remove();
         window.google = {};
     }
