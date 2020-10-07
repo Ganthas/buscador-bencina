@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import RegionsContextProvider from './contexts/RegionsContext';
 import CommunesContextProvider from './contexts/CommunesContext';
@@ -10,13 +10,11 @@ import Search from './components/Common/Search';
 import GasStationDetail from './components/GasStations/GasStationDetail';
 import NotFound from './components/NotFound';
 import './assets/css/styles.css';
-import ButtonPrimary from './components/Common/ButtonPrimary';
 
 
 const App = () => (
   <BrowserRouter>
     <Header />
-
     <Switch>
       <Route exact path='/'>
         <RegionsContextProvider>
@@ -27,7 +25,7 @@ const App = () => (
           </CommunesContextProvider>
         </RegionsContextProvider>
       </Route>
-      <Route path='/gasstation/:gasstation_id'>
+      <Route path='/gasstation/:gasstation_id/:commune_id'>
         <GasStationDetailContextProvider>
           <GasStationDetail />
         </GasStationDetailContextProvider>

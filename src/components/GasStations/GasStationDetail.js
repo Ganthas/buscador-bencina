@@ -24,20 +24,10 @@ const imgStyle = {
     maxWidth: '180px'
 }
 
-const cssButtonPrimary = {
-    float: 'left'
-}
-
 const cssTitle = {
     fontSize: '.75rem',
     textTransform: 'uppercase',
     fontWeight: '500'
-}
-
-const cssContent = {
-    marginTop: '15px',
-    fontSize: '.75rem',
-    marginBottom: '-16px'
 }
 
 const cssContent93 = {
@@ -72,8 +62,8 @@ const cssPrecio = {
     textAlign: 'center'
 }
 
-const cssSpan = {
-
+const cssDiv = {
+    paddingTop: '10px'
 }
 
 const cssLabel = {
@@ -82,6 +72,21 @@ const cssLabel = {
 
 const cssItemImg = {
     padding: '12px 12px 1px 12px'
+}
+
+const cssPrecioContent = {
+    padding: '10px',
+    textAlign: 'center'
+}
+
+const cssMetodosPagoContent = {
+    padding: '10px',
+    textAlign: 'center'
+}
+
+const cssServiciosContent = {
+    padding: '10px',
+    textAlign: 'center'
 }
 
 const GasStationDetail = () => {
@@ -97,47 +102,47 @@ const GasStationDetail = () => {
                                     <Grid item xs={12} md={4} style={cssItemImg}>
                                         <img src={gasStation.distribuidor.logo_horizontal_svg} style={imgStyle}></img>
                                     </Grid>
-                                    <Grid container justify="center" spacing={3} xs={12} md={8} style={cssData}>
+                                    <Grid item xs={12} md={8} style={cssData}>
                                         <Grid item xs={12} style={cssData}>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>fecha de actualización de información:</label> {gasStation.fecha_hora_actualizacion}
                                             </div>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>razón social:</label> {gasStation.razon_social}
                                             </div>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>Dirección:</label>
                                                 <RoomIcon style={{ fontSize: 10 }} />
                                                 {gasStation.direccion_calle} #{gasStation.direccion_numero}
                                             </div>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>horario de atención:</label> {gasStation.horario_atencion}
                                             </div>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>Región:</label> {gasStation.nombre_region}
                                             </div>
-                                            <div style={cssSpan}>
+                                            <div style={cssDiv}>
                                                 <label style={cssLabel}>Comuna:</label> {gasStation.nombre_comuna}
                                             </div>
                                         </Grid>
-                                        <Grid container justify="center" xs={12} style={cssPrecio}>
+                                        <Grid container justify="center" xs={12} style={cssPrecioContent}>
                                             <Grid item xs={12} style={cssLabel}>
                                                 precios
                                             </Grid>
-                                            <Grid item xs={12} md={4} style={cssPrecio}>
+                                            <Grid item xs={12} md={3} style={cssPrecio}>
                                                 93 ${gasStation.precios['gasolina 93']}
                                             </Grid>
-                                            <Grid item xs={12} md={4} style={cssPrecio}>
+                                            <Grid item xs={12} md={3} style={cssPrecio}>
                                                 95 ${gasStation.precios['gasolina 95']}
                                             </Grid>
-                                            <Grid item xs={12} md={4} style={cssPrecio}>
+                                            <Grid item xs={12} md={3} style={cssPrecio}>
                                                 95 ${gasStation.precios['gasolina 97']}
                                             </Grid>
-                                            <Grid item xs={12} md={12} style={cssPrecio}>
+                                            <Grid item xs={12} md={3} style={cssPrecio}>
                                                 Diesel ${gasStation.precios['petroleo diesel']}
                                             </Grid>
                                         </Grid>
-                                        <Grid container justify="center" xs={12} style={cssPrecio}>
+                                        <Grid container justify="center" xs={12} style={cssMetodosPagoContent}>
                                             <Grid item xs={12} style={cssLabel}>
                                                 métodos de pago
                                             </Grid>
@@ -154,7 +159,7 @@ const GasStationDetail = () => {
                                                 tarjetas grandes tiendas: {gasStation.metodos_de_pago['tarjetas grandes tiendas'] ? 'Si' : 'No'}
                                             </Grid>
                                         </Grid>
-                                        <Grid container justify="center" xs={12} style={cssPrecio}>
+                                        <Grid container justify="center" xs={12} style={cssServiciosContent}>
                                             <Grid item xs={12} style={cssLabel}>
                                                 servicios
                                             </Grid>
@@ -174,7 +179,6 @@ const GasStationDetail = () => {
                                     </Grid>
                                     <ButtonPrimary to={`/`} />
                                 </Grid>
-
                             </Paper>
                         </Grid > :
                         <div>
