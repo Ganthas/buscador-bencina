@@ -66,7 +66,7 @@ const cssItemImg = {
 }
 
 const GasStation = ({ data }) => {
-    const { id, distribuidor, precios, direccion_calle, direccion_numero } = data;
+    const { id, distribuidor, precios, direccion_calle, direccion_numero, fecha_hora_actualizacion } = data;
     const commune_id = document.getElementsByClassName('MuiSelect-nativeInput')[1].value.toLowerCase().trim();
     return (
         <Grid item xs={12} md={3}>
@@ -104,10 +104,7 @@ const GasStation = ({ data }) => {
                         <strong>Diesel</strong> ${precios['petroleo diesel']}
                     </Grid>
                 </Grid>
-
-                <ButtonPrimary type="gasstations" to={`/gasstation/${id}/${commune_id}`} style={cssButtonPrimary}>
-                    holiwi
-                </ButtonPrimary>
+                <ButtonPrimary type="gasstations" to={`/gasstation/${id}/${commune_id}`} style={cssButtonPrimary} />
             </Paper>
         </Grid >
     )

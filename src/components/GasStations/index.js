@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React from 'react';
 import GasStation from './GasStation';
 
 const GasStations = ({ gasStations }) => {
