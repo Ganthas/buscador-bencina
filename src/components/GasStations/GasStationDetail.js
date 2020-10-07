@@ -6,6 +6,7 @@ import ButtonPrimary from '../Common/ButtonPrimary';
 import { GasStationDetailContext } from '../../contexts/GasStationDetailContext';
 import Message from '../Common/Message';
 import ProgressBar from '../Common/ProgressBar';
+import moment from 'moment';
 
 const container = {
     marginTop: '50px',
