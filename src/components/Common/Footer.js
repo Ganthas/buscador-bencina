@@ -11,7 +11,7 @@ const css = {
     width: '100%',
     color: 'white',
     align: "center",
-    height: '100px',
+    height: '60px',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',

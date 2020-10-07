@@ -9,7 +9,7 @@ const cssLogo = {
 
 const cssAppBar = {
     borderRadius: '0 0 80px 80px',
-    height: '150px'
+    height: '110px'
 }
 
 const cssCNE = {
