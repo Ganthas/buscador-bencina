@@ -6,6 +6,7 @@ import ButtonPrimary from '../Common/ButtonPrimary';
 import { GasStationDetailContext } from '../../contexts/GasStationDetailContext';
 import Message from '../Common/Message';
 import ProgressBar from '../Common/ProgressBar';
+import Map from '../Common/Map';
 import moment from 'moment';
 
 const container = {
@@ -101,14 +102,17 @@ const GasStationDetail = () => {
                                 <Grid container justify="center" spacing={3} style={cssTitle}>
                                     <Grid item xs={12} md={4} style={cssItemImg}>
                                         <img src={gasStation.distribuidor.logo_horizontal_svg} style={imgStyle}></img>
+                                        <Map />
                                     </Grid>
                                     <Grid item xs={12} md={8} style={cssData}>
                                         <Grid item xs={12} style={cssData}>
                                             <div style={cssDiv}>
-                                                <label style={cssLabel}>fecha de actualización de información:</label> {gasStation.fecha_hora_actualizacion}
+                                                <label style={cssLabel}>fecha de actualización de información:</label>
+                                                {moment(gasStation.fecha_hora_actualizacion).format("MMMM Do YYYY, h:mm:ss")}
                                             </div>
                                             <div style={cssDiv}>
-                                                <label style={cssLabel}>razón social:</label> {gasStation.razon_social}
+                                                <label style={cssLabel}>razón social:</label>
+                                                {gasStation.razon_social}
                                             </div>
                                             <div style={cssDiv}>
                                                 <label style={cssLabel}>Dirección:</label>
@@ -116,13 +120,16 @@ const GasStationDetail = () => {
                                                 {gasStation.direccion_calle} #{gasStation.direccion_numero}
                                             </div>
                                             <div style={cssDiv}>
-                                                <label style={cssLabel}>horario de atención:</label> {gasStation.horario_atencion}
+                                                <label style={cssLabel}>horario de atención:</label>
+                                                {gasStation.horario_atencion}
                                             </div>
                                             <div style={cssDiv}>
-                                                <label style={cssLabel}>Región:</label> {gasStation.nombre_region}
+                                                <label style={cssLabel}>Región:</label>
+                                                {gasStation.nombre_region}
                                             </div>
                                             <div style={cssDiv}>
-                                                <label style={cssLabel}>Comuna:</label> {gasStation.nombre_comuna}
+                                                <label style={cssLabel}>Comuna:</label>
+                                                {gasStation.nombre_comuna}
                                             </div>
                                         </Grid>
                                         <Grid container justify="center" xs={12} style={cssPrecioContent}>
