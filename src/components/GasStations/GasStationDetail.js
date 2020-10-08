@@ -102,7 +102,7 @@ const GasStationDetail = () => {
                                 <Grid container justify="center" spacing={3} style={cssTitle}>
                                     <Grid item xs={12} md={4} style={cssItemImg}>
                                         <img src={gasStation.distribuidor.logo_horizontal_svg} style={imgStyle}></img>
-                                        <Map />
+                                        <Map ubicacion={gasStation.ubicacion} />
                                     </Grid>
                                     <Grid item xs={12} md={8} style={cssData}>
                                         <Grid item xs={12} style={cssData}>
