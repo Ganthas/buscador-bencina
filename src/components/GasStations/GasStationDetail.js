@@ -3,11 +3,15 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import RoomIcon from '@material-ui/icons/Room';
 import ButtonPrimary from '../Common/ButtonPrimary';
+import Check from '../Common/Check';
 import { GasStationDetailContext } from '../../contexts/GasStationDetailContext';
 import Message from '../Common/Message';
 import ProgressBar from '../Common/ProgressBar';
 import Map from '../Common/Map';
 import moment from 'moment';
+import LocalGasStationIcon from '@material-ui/icons/LocalGasStation';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import PaymentIcon from '@material-ui/icons/Payment';
 
 const container = {
     marginTop: '50px',
@@ -31,24 +35,8 @@ const cssTitle = {
     fontWeight: '500'
 }
 
-const cssContent93 = {
-    borderTop: '1px #dddddd solid',
-}
-
-const cssContent95 = {
-    border: '1px #dddddd solid',
-}
-
-const cssContent97 = {
-    borderTop: '1px #dddddd solid',
-}
-
-const cssContentDiesel = {
-    marginTop: '15px',
-    marginBottom: '-8px',
-    borderTop: '1px #dddddd solid',
-    borderBottom: '1px #dddddd solid',
-    fontSize: '.75rem'
+const cssIcons = {
+    fontSize: '1rem'
 }
 
 const cssData = {
@@ -58,7 +46,7 @@ const cssData = {
 }
 
 const cssPrecio = {
-    paddingTop: '0px',
+    paddingTop: '10px',
     paddingBottom: '0px',
     textAlign: 'center'
 }
@@ -71,6 +59,12 @@ const cssLabel = {
     color: '#043f6c'
 }
 
+const cssSecciones = {
+    color: '#043f6c',
+    padding: '10px',
+    backgroundColor: '#BDE2FF'
+}
+
 const cssItemImg = {
     padding: '12px 12px 1px 12px'
 }
@@ -81,6 +75,7 @@ const cssPrecioContent = {
 }
 
 const cssMetodosPagoContent = {
+
     padding: '10px',
     textAlign: 'center'
 }
@@ -133,54 +128,54 @@ const GasStationDetail = () => {
                                             </div>
                                         </Grid>
                                         <Grid container justify="center" xs={12} style={cssPrecioContent}>
-                                            <Grid item xs={12} style={cssLabel}>
-                                                precios
+                                            <Grid item xs={12} style={cssSecciones}>
+                                                precios <LocalGasStationIcon style={cssIcons} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                93 ${gasStation.precios['gasolina 93']}
+                                                <label style={cssLabel}>93:</label> ${gasStation.precios['gasolina 93']}
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                95 ${gasStation.precios['gasolina 95']}
+                                                <label style={cssLabel}>95:</label> ${gasStation.precios['gasolina 95']}
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                95 ${gasStation.precios['gasolina 97']}
+                                                <label style={cssLabel}>97:</label> ${gasStation.precios['gasolina 97']}
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                Diesel ${gasStation.precios['petroleo diesel']}
+                                                <label style={cssLabel}>Diesel:</label> ${gasStation.precios['petroleo diesel']}
                                             </Grid>
                                         </Grid>
                                         <Grid container justify="center" xs={12} style={cssMetodosPagoContent}>
-                                            <Grid item xs={12} style={cssLabel}>
-                                                métodos de pago
+                                            <Grid item xs={12} style={cssSecciones}>
+                                                métodos de pago <PaymentIcon style={cssIcons} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                cheque: {gasStation.metodos_de_pago['cheque'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>Cheque:</label> <Check condicion={gasStation.metodos_de_pago['cheque']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                efectivo: {gasStation.metodos_de_pago['efectivo'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>Efectivo:</label> <Check condicion={gasStation.metodos_de_pago['efectivo']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                tarjetas bancarias: {gasStation.metodos_de_pago['tarjetas bancarias'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>Tarjetas bancarias:</label> <Check condicion={gasStation.metodos_de_pago['tarjetas bancarias']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                tarjetas grandes tiendas: {gasStation.metodos_de_pago['tarjetas grandes tiendas'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>tarjetas grandes tiendas:</label> <Check condicion={gasStation.metodos_de_pago['tarjetas grandes tiendas']} />
                                             </Grid>
                                         </Grid>
                                         <Grid container justify="center" xs={12} style={cssServiciosContent}>
-                                            <Grid item xs={12} style={cssLabel}>
-                                                servicios
+                                            <Grid item xs={12} style={cssSecciones}>
+                                                servicios <ShoppingCartIcon style={cssIcons} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                autoservicio: {gasStation.servicios['autoservicio'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>autoservicio:</label> <Check condicion={gasStation.servicios['autoservicio']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                farmacia: {gasStation.servicios['farmacia'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>farmacia:</label> <Check condicion={gasStation.servicios['farmacia']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                mantención: {gasStation.servicios['mantencion'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>mantención:</label> <Check condicion={gasStation.servicios['mantencion']} />
                                             </Grid>
                                             <Grid item xs={12} md={3} style={cssPrecio}>
-                                                tienda: {gasStation.servicios['tienda'] ? 'Si' : 'No'}
+                                                <label style={cssLabel}>tienda:</label> <Check condicion={gasStation.servicios['tienda']} />
                                             </Grid>
                                         </Grid>
                                     </Grid>
